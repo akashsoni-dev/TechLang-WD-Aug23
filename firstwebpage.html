@@ -8,7 +8,63 @@
         <link href="./external.css" rel="stylesheet" />
         <script src="./external.js"></script>
         <style>
-            /* css content */
+            
+            /* syntax */
+            selector {
+                property: value;
+            }
+
+            /* ID selector (#idname) */
+            #para {
+                color: green;
+            }
+
+            /* CLASS selector (.classname) */
+            .textbox {
+                border: 2px solid blue;
+            }
+
+            /* TAGNAME selector (tagname) */
+            input {
+                border: 2px solid red;
+            }
+            
+            /* grouping of selectors (,) */
+            table,td,th {
+                border: 2px dashed red;
+            }
+
+            /* universal selector (*) */
+            * {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            /* attribute selector (tagname[attribute='value']) */
+            img[src='./images/logo.png'] {
+                height: 150px;
+            }
+
+            /* descendent selector (parent_tag descendent_tag) */
+            table td {
+                background-color: rgb(255, 120, 120);
+            }
+        
+            /* child selector (parent_tag > child_tag) */
+            table > caption{
+                color: blue;
+            }
+
+            /* adjacent selector (+) */
+            #para + * {
+                font-size: larger;
+            }
+
+            /* sibling selector (~) */
+            #para ~ * {
+                font-weight: bold;
+            }
+
+
         </style>
         <script>
             //javascript content
@@ -16,7 +72,9 @@
     </head>
     <body>
         <!-- basic tags -->
-        <p>This is paragraph tag 1</p>
+        <p>This is paragraph tag 2</p>
+        <p>This is paragraph tag 2</p>
+        <p id="para">This is paragraph tag 1</p>
         <p>This is paragraph tag 2</p>
         <a href="http://google.com" target="_blank">This is Anchor tag</a>
         <div>This is Div tag 1</div>
@@ -102,7 +160,7 @@
         <h6>Division titles</h6>
 
         <!-- table tags -->
-        <table border="2px">
+        <table>
             <caption>Student Details</caption>
             <colgroup>
                 <col span="2" style="background-color: red;" />
@@ -186,7 +244,7 @@
                 <legend>HTML Input Tags:</legend>
                 
                 <!--text fields-->
-                <input class="textbox" type="text" name="name_inp" id="name_txt" class="textbox" value="Hello" required/>
+                <input style="border: 3px dotted green;" class="textbox" type="text" name="name_inp" id="name_txt" class="textbox" value="Hello" required/>
                 <input class="textbox" type="url" placeholder="Enter a URL"/>
                 <input class="textbox" type="search" />
                 <input class="textbox" type="password" />
@@ -228,8 +286,5 @@
                 <button type="reset">Reset</button>
             </fieldset>
         </form>
-        
-
-
     </body>
 </html>
