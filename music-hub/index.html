@@ -8,13 +8,146 @@
     <title>Music Hub</title>
     <link rel="stylesheet" href="./assets/css/main.css">
     <script src="./assets/js/external.js"></script>
+    <script src="https://kit.fontawesome.com/9e2c9fd14a.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 0;
+            padding:0;
+        }
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+        header {
+            background-color: rgb(26, 26, 26);
+            text-align: right;
+        }
+        header>a {
+            color: white;
+            text-decoration: none;
+            margin: 0px 25px 0px 0px;
+            font-size: 13px;
+        }
+
+        #dropdown {
+            display: inline-block;
+        }
+        #dropdown-btn {
+            padding: 10px 30px ;
+            font-size: 17px;
+            border: none;
+            background-color: rgb(0, 161, 0);
+            font-weight: bold;
+        }
+        #dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            z-index: 10;
+        }
+        #dropdown-content a {
+            white-space:nowrap;
+            display: block;
+            padding: 10px 25px;
+            background-color: rgb(184, 184, 184);
+            color: black;
+            text-decoration: none;
+        }
+        #dropdown-content a:hover {
+            background-color: rgb(152, 152, 152);
+        }
+        #dropdown:hover #dropdown-btn {
+            background-color: rgb(0, 120, 0) ;
+            color: white;
+        }
+        #dropdown:hover #dropdown-content{
+            display: block;
+        }
+        #secondary-header {
+            background-color: #fac816;
+            position: relative;  
+            height: 150px;
+        }
+        #secondary-header #branding {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        img[src="./assets/images/logo.gif"] {
+            height: 150px;
+        }
+        #branding h1 {
+            position: absolute;
+            top:10px;
+            left: 160px;
+            white-space: nowrap;
+            font-family: fantasy;
+            font-size: 75px;
+            font-weight: normal;
+        }
+        #branding p {
+            position: absolute;
+            top: 105px;
+            left: 160px;
+            font-size: 19.2px;
+            white-space: nowrap;
+        }
+        #secondary-header #search {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        #search form {
+            position: relative;
+            top: 60px;
+            right: 40px;
+        }
+        #search input {
+            position: absolute;
+            right: 0;
+            width: 210px;
+            padding: 5px 25px 5px 5px;
+        }
+        #search button {
+            position: absolute;
+            right: 0;
+            height: 30px;
+            width: 30px;
+            background-color: transparent;
+            border: none;
+        }
+        nav {
+            background-color: #333333;
+            display: flex;
+            flex-direction: row;
+            align-content: stretch;
+            justify-content: space-around;
+        }
+        nav li {
+            list-style-type: none;
+        }
+        nav li a {
+            color: white;
+            display: inline-block;
+            margin: 10px 30px;
+            text-decoration: none;
+        }
+        @media (max-width:850px) {
+            nav {
+                display: none;
+            }
+            #search {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- page header -->
     <header>
         <a href="./legal/privacy.html">Privacy Policy</a>
         <a href="./legal/tnc.html">Terms & Conditions</a>
-        <a href="./profile/cart.html">Terms & Conditions</a>
+        <a href="./profile/cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
         <div id="dropdown">
             <button id="dropdown-btn">Login</button>
             <div id="dropdown-content">
@@ -27,26 +160,29 @@
     <!-- branding section -->
     <section id="secondary-header">
         <div id="branding">
-            <img src="./assets/images/logo.gif" alt="Music hUb Logo">
+            <img src="./assets/images/logo.gif" alt="Music hub Logo">
             <h1>MUSIC HUB</h1>
             <p>One stop shop for all your musical needs</p>
         </div>
         <div id="search">
             <form method="get" action="search.html">
-                <input type="search" name="query" placeholder="Search songs, artists, playliss, etc..." />
-                <button>Search</button>
+                <input type="text" name="query" placeholder="Search songs, artists, playlists, etc..." />
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
     </section>
 
     <!-- menu bar -->
     <nav>
-        <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./recent.html">New Hits</a></li>
-        </ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./recent.html">New Hits</a></li>
+        <li><a href="./hits.html">Most Liked</a></li>
+        <li><a href="./genre.html">Genre</a></li>
+        <li><a href="About.html">About Us</a></li>
     </nav>
+
     <main></main>
     <footer></footer>
+    
 </body>
 </html>
